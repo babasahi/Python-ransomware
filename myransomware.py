@@ -1,6 +1,16 @@
 
+import os
 from encrypt_file import EncryptFile
 
 
 encrypt = EncryptFile()
-encrypt.encryptLineByLine("text")
+
+directoryFiles = os.listdir()
+filesToEncrypt = []
+for file in directoryFiles:
+    if file.endswith(".txt"):
+        filesToEncrypt.append(file)
+
+
+print(filesToEncrypt)
+encrypt.encryptLineByLine(filesToEncrypt)
