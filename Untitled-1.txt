@@ -1,9 +1,1 @@
-
-
-encrypt = EncryptFile()
-
-directoryFiles = os.listdir()
-files = []
-for file in directoryFiles:
-    if file.endswith(".txt"):
-        files.append(file)
+[]

@@ -2,7 +2,7 @@ from cryptography.fernet import Fernet
 
 
 class EncryptFile:
-    def encryptLineByLine(self, files):
+    def encrypt(self, files):
 
         for file in files:
             print()
@@ -14,13 +14,8 @@ class EncryptFile:
             keyHandler.write(encryptionKey)
             print("Wrote encryption key to 'key.txt' file")
             fernet = Fernet(encryptionKey)
-            textbytes = []
-            for line in file:
-                print('Line to encrypt :\n')
-                print(str(line.to_bytes))
-                textbytes.append(str(line).encode("ascii"))
-
-            writeHandler.write(str(textbytes).encode("ascii"))
+            encrypted = fernet.encrypt(file)
+            writeHandler.write(encrypted)
             print("Encryption done")
 
     def encryptAll(fileName):
