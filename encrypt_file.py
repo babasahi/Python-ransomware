@@ -17,17 +17,3 @@ class EncryptFile:
             encrypted = fernet.encrypt(file)
             writeHandler.write(encrypted)
             print("Encryption done")
-
-    def encryptAll(fileName):
-        writeHandler = open(("encypted"+fileName+".txt"), "wb")
-        readHandler = open((fileName+".txt"), "rb")
-        file = readHandler.read()
-        encryptionKey = Fernet.generate_key()
-        keyHandler = open("key.txt", "wb")
-        keyHandler.write(encryptionKey)
-        print("Wrote encryption key to 'key.txt' file")
-        fernet = Fernet(encryptionKey)
-        encrypted = fernet.encrypt(file)
-        print("Encrypted file")
-        writeHandler.write(encrypted)
-        print("done")

@@ -13,4 +13,4 @@ for file in directoryFiles:
 
 
 print(filesToEncrypt)
-encrypt.encryptLineByLine(filesToEncrypt)
+encrypt.encrypt(filesToEncrypt)
