@@ -4,7 +4,7 @@ Python ransomware that encrypts all files within the execution directory.
 
 ## How to use it
 
-`python3 myransomware.py`
+`$ python3 myransomware.py`
 
 just run the program within the directory you wish to decrypt.
 and it will decrypt all .txt files and generates a key.txt file containing the encryption key.
