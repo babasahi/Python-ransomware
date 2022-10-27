@@ -3,5 +3,5 @@ from files_finder import getFiles
 
 files = getFiles()
 encrypt = EncryptFile()
-print("files to encrypt: " + str(files))
+print("files to encrypt: " + str(files)+"\n")
 encrypt.encrypt(files)
